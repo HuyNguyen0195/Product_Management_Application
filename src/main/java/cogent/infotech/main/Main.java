@@ -32,9 +32,9 @@ public class Main {
 				int price = sc.nextInt();
 				System.out.println("category");
 				String category=sc.next();
-				System.out.println("manufacture date");
+				System.out.println("manufacture date yyyy-mm-dd");
 				String manuDate=sc.next();
-				System.out.println("expire date");
+				System.out.println("expire date yyyy-mm-dd");
 				String expire=sc.next();
 				pController.create(id, name, price, category, manuDate, expire);
 				break;
@@ -72,11 +72,15 @@ public class Main {
 				int price7 = sc.nextInt();
 				System.out.println("category");
 				String category7=sc.next();
-				System.out.println("manufacture date");
+				System.out.println("manufacture date yyyy-mm-dd");
 				String manuDate7=sc.next();
-				System.out.println("expire date");
+				System.out.println("expire date yyyy-mm-dd");
 				String expire7=sc.next();
 				pController.updateById(id7, name7, price7, category7, manuDate7, expire7);
+				break;
+			case 8:
+				System.out.println("expired products:");
+				pController.expiredProducts();;
 				break;
 			case 9: System.exit(0);
 			default:

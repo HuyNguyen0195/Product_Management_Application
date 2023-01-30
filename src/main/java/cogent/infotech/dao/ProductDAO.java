@@ -18,4 +18,6 @@ public interface ProductDAO {
 			String category,
 			String manufactur_date,
 			String expire_date);
+	public void findExpiredProducts();
+	
 }

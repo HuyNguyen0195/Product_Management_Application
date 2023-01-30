@@ -28,4 +28,7 @@ public class ProductController {
 			String expire_date) {
 		dao.updateProductById(pId, pName, price, category, manufactur_date, expire_date);
 	}
+	public void expiredProducts() {
+		dao.findExpiredProducts();
+	}
 }

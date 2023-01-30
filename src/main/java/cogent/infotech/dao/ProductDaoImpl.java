@@ -185,4 +185,29 @@ public class ProductDaoImpl implements ProductDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	public void findExpiredProducts() {
+		// TODO Auto-generated method stub
+		String query="select * from product where expire_date < curdate()";
+		try {
+			Connection connection=JdbcUtils.getConnect();
+			PreparedStatement ps=connection.prepareStatement(query);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()) {
+				System.out.println("id: "+rs.getInt("pId"));
+				System.out.println("name: "+rs.getString("pName"));
+				System.out.println("price: "+rs.getInt("price"));
+				System.out.println("category: "+rs.getString("pCat"));
+				System.out.println("manu_date: "+rs.getString("manufacture_date"));
+				System.out.println("expire_date: "+rs.getString("expire_date"));
+			}
+			connection.close();
+			ps.close();
+	
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
 }
